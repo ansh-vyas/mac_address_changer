@@ -6,12 +6,10 @@ import subprocess
 import optparse
 import re
 
-from pandas import options
-
 def arguments():
     ansh = optparse.OptionParser()
     ansh.add_option("-i","--interface", dest="interface", help="interface to change its mac address")
-    ansh.add_option("-nM","--mac", dest="new_mac", help="new mac address")
+    ansh.add_option("-m","--mac", dest="new_mac", help="new mac address")
     (options,arguments) = ansh.parse_args()
     if not options.interface:
         ansh.error("[-] please specify an interface, use --help for full guide.")
